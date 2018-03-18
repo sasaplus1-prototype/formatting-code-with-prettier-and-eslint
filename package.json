@@ -1,0 +1,33 @@
+{
+  "devDependencies": {
+    "eslint": "^4.19.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-prettier": "^2.6.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.0.0",
+    "prettier": "^1.11.1"
+  },
+  "eslintConfig": {
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:prettier/recommended"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 2017
+    },
+    "root": true
+  },
+  "lint-staged": {
+    "**/*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "private": true,
+  "scripts": {
+    "precommit": "lint-staged"
+  }
+}
